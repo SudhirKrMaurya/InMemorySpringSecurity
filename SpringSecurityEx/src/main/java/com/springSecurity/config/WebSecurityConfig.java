@@ -12,19 +12,25 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		System.err.print("default user ");
+		System.err.println("default user ");
 		// Used by the default implementation of authenticationManager() to attempt to obtain an AuthenticationManager.
 		// add user for in memory Authentication
 		auth.inMemoryAuthentication().withUser("sudhirkumar").password("{noop}9211420").roles("user");
 		auth.inMemoryAuthentication().withUser("sudhir").password("{noop}s111").roles("user");
 		//super.configure(auth);
 	}
+
+	
+	
 	
 	
 	/*
-	 * @Override protected void configure(HttpSecurity http) throws Exception { //
-	 * TODO Auto-generated method stub //super.configure(http); //http.httpBasic();
+	 * @Override protected void configure(HttpSecurity http) throws Exception {
+	 * 
+	 * http.httpBasic();
 	 * http.authorizeRequests().anyRequest().authenticated().and().httpBasic(); }
+	 * 
 	 */
-	
+
+
 }
